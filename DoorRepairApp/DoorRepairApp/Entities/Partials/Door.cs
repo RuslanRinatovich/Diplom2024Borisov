@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace WindowRepairApp.Entities
+{
+    public partial class Product
+    {
+        public string GetPhoto
+        {
+            get
+            {
+                if (Photo is null)
+                    return null;
+                return System.IO.Directory.GetCurrentDirectory() + @"\Images\" + Photo.Trim();
+            }
+        }
+
+
+        public string GetInfo
+        {
+            get
+            {
+                if (Description.Length >= 200)
+                    return Description.Substring(0, 200);
+                return Description;
+            }
+        }
+
+
+
+        public Visibility GetVisibility
+        {
+            get
+            {
+                if (Manager.CurrentUser == null)
+                    return Visibility.Collapsed;
+                if (Manager.CurrentUser.RoleId < 2)
+                    return Visibility.Collapsed;
+                return Visibility.Visible;
+            }
+        }
+    }
+}
