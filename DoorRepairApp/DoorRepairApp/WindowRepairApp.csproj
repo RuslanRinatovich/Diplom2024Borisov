@@ -94,10 +94,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\OrderProduct.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Partials\OrderDoor.cs" />
     <Compile Include="Entities\Partials\OrderService.cs" />
     <Compile Include="Entities\Partials\Service.cs" />
     <Compile Include="Entities\Partials\User.cs" />
+    <Compile Include="Entities\Product.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddDoorPage.xaml.cs">
       <DependentUpon>AddDoorPage.xaml</DependentUpon>
     </Compile>
@@ -228,15 +234,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Door.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\DoorBasket.cs" />
     <Compile Include="Entities\Manager.cs" />
     <Compile Include="Entities\Order.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\OrderDoor.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\OrderService.cs">
